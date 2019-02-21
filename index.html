@@ -177,45 +177,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>1、常量池</strong>   </p>
-<p>Java 被编译成 class 文件时,会生成一个常量池（Constant pool）的数据结构，用于保存字面常量和符号引用（类名、方法名、接口名和字段名等）。常量池的内存在 Java 堆上进行分配，意味着常量池不受固定大小的限制。</p>
-<p><strong>2、字符串初始化</strong></p>
-<p>字符串初始化的方式有两种：字面常量、String 对象</p>
-<p>（1）如下一段代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String a = &quot;java&quot;;</span><br><span class="line">String b = &quot;java&quot;;</span><br><span class="line">String c = &quot;ja&quot; + &quot;va&quot;;</span><br><span class="line">System.out.println(&quot;一致性&quot;+(a==b));</span><br><span class="line">System.out.println(&quot;一致性&quot;+(a==c));</span><br><span class="line">System.out.println(&quot;一致性&quot;+(b==c));</span><br></pre></td></tr></table></figure></p>
-<p>输出结果是：</p>
-<p><img src="https://ws1.sinaimg.cn/large/88ddd23bly1fyuktvvoqqj205f03bq2q.jpg" alt></p>
-<p>我们通过 javap -c 命令分析一下字节码指令的实现：  </p>
-<p><img src="https://ws1.sinaimg.cn/large/88ddd23bly1fyukyz8c39j20dp06cdfv.jpg" alt></p>
-<p>通过上图可以看出，ldc 指令将 int、float、String 等类型的常量值从常量池中推送到栈顶，所以 a、b 都指向常量池中 “java” 字符串，同时也可以发现 c 也指向常量池中 “java” 字符串，那是因为在编译期间，表达式 “ja”+”va” 已经将结果值 “java” 直接赋值给 c </p>
-<p>（2）如下一段代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String a = &quot;java&quot;;</span><br><span class="line">String c = new String(&quot;java&quot;);</span><br><span class="line">System.out.println((a==c));</span><br></pre></td></tr></table></figure>
-<p>输出结果为：</p>
-<p><img src="https://ws1.sinaimg.cn/large/88ddd23bly1fyulezuwg7j202y02cmwx.jpg" alt></p>
-<p>我们通过 javap -c 命令分析一下字节码指令的实现：  </p>
-<p><img src="https://ws1.sinaimg.cn/large/88ddd23bly1fyulg6palbj20me07x74g.jpg" alt></p>
-<p>通过上图可以分析出，a 指向常量池中的 “java” 字符串，c 指向 Java 堆中新建的 String 对象，而该对象的 char 数组则指向常量池中的 “java” 字符串，所以得出结论，a != c</p>
-<p>（3）如下一段代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String a = &quot;ja&quot;;</span><br><span class="line">String b = &quot;va&quot;;</span><br><span class="line">String c = a + b;</span><br><span class="line">String d = &quot;java&quot;;</span><br><span class="line">System.out.println(c == d);</span><br></pre></td></tr></table></figure>
-<p>输出结果：</p>
-<p><img src="https://ws1.sinaimg.cn/large/88ddd23bly1fyulezuwg7j202y02cmwx.jpg" alt></p>
-<p>我们通过 javap -c 命令分析一下字节码指令的实现： </p>
-<p><img src="https://ws1.sinaimg.cn/large/88ddd23bly1fyulwlb92gj20sp0dlgm9.jpg" alt></p>
-<p>可以看到会创建一个 StringBuilder 对象，然后将 a、b 拼接起来，然后通过 toString 方法产生一个 String 对象 c，而 d 是直接指向常量池中的字符串 “java”,所以得出 c != d</p>
-<p>（4）但如果是如下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">final String a = &quot;ja&quot;;</span><br><span class="line">final String b = &quot;va&quot;;</span><br><span class="line">String c = a + b;</span><br><span class="line">String d = &quot;java&quot;;</span><br><span class="line">System.out.println(c == d);</span><br></pre></td></tr></table></figure>
-<p>则能输出 true</p>
-<p>我们通过 javap -c 命令分析一下字节码指令的实现：</p>
-<p><img src="https://ws1.sinaimg.cn/large/88ddd23bly1fyumoo6pdxj20di04omx4.jpg" alt></p>
-<p>通过上图可以看出，用 final 修饰后，在编译期间，就已经将 a 和 b 拼接好赋值给 c 了，然后 c 和 d 同时指向常量池中字符串 “java”，所以得出的结论是 c == d</p>
-<p><strong>3、String、StringBuffer和StringBuilder的区别</strong></p>
-<p>三者本质上都是字符数组</p>
-<p>（1）String 是不可变的对象，因此每次改变 String 的时候，都会产生一个新的 String 对象，然后将指针指向新的 String 对象，所以经常改变内容的字符串不要使用 String，如果要操作少量的数据，则可以使用 String  </p>
-<p>（2）单线程操作大量数据，使用 StringBuilder,因为不用保证线程同步，所以速度更快</p>
-<p>（3）多线程操作大量数据，使用 StringBuffer，因为需要考虑线程同步，所以速度更慢一些</p>
-
+<p>Java 被编译成 class 文件时,会生成一个常量池（Constant pool）的数据结构，用于保存字面常量和符号引用（类名、方法名、接口名和字段名等）。常量池的内存在 Java 堆上进行分配，意味着常量池不受固定大小的限制。<br>
+        
+          <a class="article-more-a" href="/2019/02/21/Java-String/#more">more >></a>
+        
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -420,7 +389,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">程序猿&lt;br&gt;&lt;br&gt;不羁的码农&lt;br&gt;曾梦想靠代码改变世界！</div>
   	  	
     	</section>
     
