@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Java String | Keven 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、常量池    Java 被编译成 class 文件时,会生成一个常量池（Constant pool）的数据结构，用于保存字面常量和符号引用（类名、方法名、接口名和字段名等）。常量池的内存在 Java 堆上进行分配，意味着常量池不受固定大小的限制。">
-<meta name="keywords" content="Android，Java，开发者，车联网，程序猿">
+  <meta name="description" content="1、常量池    Java 被编译成 class 文件时,会生成一个常量池（Constant pool）的数据结构，用于保存字面常量和符号引用（类名、方法名、接口名和字段名等）。常量池的内存在 Java 堆上进行分配，意味着常量池不受固定大小的限制。 2、字符串初始化 字符串初始化的方式有两种：字面常量、String 对象 （1）如下一段代码：123456String a = &amp;quot;java">
+<meta name="keywords" content="Java 基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java String">
 <meta property="og:url" content="http://yoursite.com/2019/02/21/Java-String/index.html">
 <meta property="og:site_name" content="Keven 的博客">
-<meta property="og:description" content="1、常量池    Java 被编译成 class 文件时,会生成一个常量池（Constant pool）的数据结构，用于保存字面常量和符号引用（类名、方法名、接口名和字段名等）。常量池的内存在 Java 堆上进行分配，意味着常量池不受固定大小的限制。">
+<meta property="og:description" content="1、常量池    Java 被编译成 class 文件时,会生成一个常量池（Constant pool）的数据结构，用于保存字面常量和符号引用（类名、方法名、接口名和字段名等）。常量池的内存在 Java 堆上进行分配，意味着常量池不受固定大小的限制。 2、字符串初始化 字符串初始化的方式有两种：字面常量、String 对象 （1）如下一段代码：123456String a = &amp;quot;java">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/88ddd23bly1fyuktvvoqqj205f03bq2q.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/88ddd23bly1fyukyz8c39j20dp06cdfv.jpg">
@@ -23,10 +23,10 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/88ddd23bly1fyulezuwg7j202y02cmwx.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/88ddd23bly1fyulwlb92gj20sp0dlgm9.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/88ddd23bly1fyumoo6pdxj20di04omx4.jpg">
-<meta property="og:updated_time" content="2019-02-21T07:23:20.117Z">
+<meta property="og:updated_time" content="2019-02-21T09:53:22.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java String">
-<meta name="twitter:description" content="1、常量池    Java 被编译成 class 文件时,会生成一个常量池（Constant pool）的数据结构，用于保存字面常量和符号引用（类名、方法名、接口名和字段名等）。常量池的内存在 Java 堆上进行分配，意味着常量池不受固定大小的限制。">
+<meta name="twitter:description" content="1、常量池    Java 被编译成 class 文件时,会生成一个常量池（Constant pool）的数据结构，用于保存字面常量和符号引用（类名、方法名、接口名和字段名等）。常量池的内存在 Java 堆上进行分配，意味着常量池不受固定大小的限制。 2、字符串初始化 字符串初始化的方式有两种：字面常量、String 对象 （1）如下一段代码：123456String a = &amp;quot;java">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/large/88ddd23bly1fyuktvvoqqj205f03bq2q.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Keven 的博客" type="application/atom+xml">
@@ -184,7 +184,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>1、常量池</strong>   </p>
-<p>Java 被编译成 class 文件时,会生成一个常量池（Constant pool）的数据结构，用于保存字面常量和符号引用（类名、方法名、接口名和字段名等）。常量池的内存在 Java 堆上进行分配，意味着常量池不受固定大小的限制。<br><a id="more"></a></p>
+<p>Java 被编译成 class 文件时,会生成一个常量池（Constant pool）的数据结构，用于保存字面常量和符号引用（类名、方法名、接口名和字段名等）。常量池的内存在 Java 堆上进行分配，意味着常量池不受固定大小的限制。</p>
 <p><strong>2、字符串初始化</strong></p>
 <p>字符串初始化的方式有两种：字面常量、String 对象</p>
 <p>（1）如下一段代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String a = &quot;java&quot;;</span><br><span class="line">String b = &quot;java&quot;;</span><br><span class="line">String c = &quot;ja&quot; + &quot;va&quot;;</span><br><span class="line">System.out.println(&quot;一致性&quot;+(a==b));</span><br><span class="line">System.out.println(&quot;一致性&quot;+(a==c));</span><br><span class="line">System.out.println(&quot;一致性&quot;+(b==c));</span><br></pre></td></tr></table></figure></p>
@@ -257,6 +257,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -437,6 +448,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java 基础</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -487,7 +502,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://github.com/keven0632" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://github.com/keven0632" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Github地址</a>
             </li>
           
         </ul>
