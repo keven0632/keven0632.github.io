@@ -6,19 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Java 基础 | Keven 的博客</title>
+  <title>Android 官方组件 Navigation 初使用 | Keven 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个不羁的码农，梦想用代码改变世界！">
-<meta name="keywords" content="Android，Java，开发者，车联网，程序猿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Keven 的博客">
-<meta property="og:url" content="http://yoursite.com/tags/Java-基础/index.html">
+  <meta name="description" content="Google I/O 大会中国场次已经结束，最近也上线了 Android Studio 3.2 版本，在新版本上有一个谷歌着重推荐的架构组件 Navigation。 Navigation 主要是提供了 Fragment 之间的跳转切换，栈管理，可以使我们在应用中更加轻松的使用 Fragment。先看下我使用两个 Fragment 实现的最终效果：">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 官方组件 Navigation 初使用">
+<meta property="og:url" content="http://yoursite.com/2019/02/21/Android-官方组件-Navigation-初使用/index.html">
 <meta property="og:site_name" content="Keven 的博客">
-<meta property="og:description" content="一个不羁的码农，梦想用代码改变世界！">
+<meta property="og:description" content="Google I/O 大会中国场次已经结束，最近也上线了 Android Studio 3.2 版本，在新版本上有一个谷歌着重推荐的架构组件 Navigation。 Navigation 主要是提供了 Fragment 之间的跳转切换，栈管理，可以使我们在应用中更加轻松的使用 Fragment。先看下我使用两个 Fragment 实现的最终效果：">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/88ddd23bly1fvmx4pedm2g209n0fr0tc.gif">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/88ddd23bly1fvmx3n2qlyj20hq0ahmxc.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/88ddd23bly1fvmxkbmhxnj20kn0at0td.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/88ddd23bly1fvmxnflos0j20wf0hs74p.jpg">
+<meta property="og:updated_time" content="2019-02-21T11:54:01.865Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Keven 的博客">
-<meta name="twitter:description" content="一个不羁的码农，梦想用代码改变世界！">
+<meta name="twitter:title" content="Android 官方组件 Navigation 初使用">
+<meta name="twitter:description" content="Google I/O 大会中国场次已经结束，最近也上线了 Android Studio 3.2 版本，在新版本上有一个谷歌着重推荐的架构组件 Navigation。 Navigation 主要是提供了 Fragment 之间的跳转切换，栈管理，可以使我们在应用中更加轻松的使用 Fragment。先看下我使用两个 Fragment 实现的最终效果：">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/88ddd23bly1fvmx4pedm2g209n0fr0tc.gif">
   
     <link rel="alternative" href="/atom.xml" title="Keven 的博客" type="application/atom+xml">
   
@@ -154,60 +160,202 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Android-官方组件-Navigation-初使用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/21/Java-String/" class="archive-article-date">
-  	<time datetime="2019-02-21T07:13:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/21/Java-String/">Java String</a>
+    <h1 class="article-title" itemprop="name">
+      Android 官方组件 Navigation 初使用
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/02/21/Android-官方组件-Navigation-初使用/" class="archive-article-date">
+  	<time datetime="2019-02-21T11:53:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Google I/O 大会中国场次已经结束，最近也上线了 Android Studio 3.2 版本，在新版本上有一个谷歌着重推荐的架构组件 Navigation。</p>
+<p>Navigation 主要是提供了 Fragment 之间的跳转切换，栈管理，可以使我们在应用中更加轻松的使用 Fragment。先看下我使用两个 Fragment 实现的最终效果：<br><a id="more"></a></p>
+<p><img src="https://ws1.sinaimg.cn/large/88ddd23bly1fvmx4pedm2g209n0fr0tc.gif" alt></p>
+<p><strong>第一步</strong>：想要使用 Navigation，首先要将 Android Studio 升级到 3.2 版本,然后在 Settings 中最后一行找到 Experimental，对右侧 Enable Navigation Editor 打钩，如下图所示，然后重启 studio 使设置生效。</p>
+<p><img src="https://ws1.sinaimg.cn/large/88ddd23bly1fvmx3n2qlyj20hq0ahmxc.jpg" alt></p>
+<p><strong>第二步：</strong> 创建两个 Fragment，FirstFragment 和 SecondFragment，布局内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;FrameLayout</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    xmlns:tools=&quot;http://schemas.android.com/tools&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    tools:context=&quot;.FirstFragment&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- TODO: Update blank fragment layout --&gt;</span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_gravity=&quot;center_horizontal&quot;</span><br><span class="line">        android:layout_marginTop=&quot;100dp&quot;</span><br><span class="line">        android:text=&quot;我是第一个Fragment&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;Button</span><br><span class="line">        android:id=&quot;@+id/btn_next&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_gravity=&quot;center&quot;</span><br><span class="line">        android:text=&quot;跳转到第二个Fragment&quot;</span><br><span class="line">        android:textAllCaps=&quot;false&quot;</span><br><span class="line">    /&gt;</span><br><span class="line">&lt;/FrameLayout&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;FrameLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">             xmlns:tools=&quot;http://schemas.android.com/tools&quot;</span><br><span class="line">             android:layout_width=&quot;match_parent&quot;</span><br><span class="line">             android:layout_height=&quot;match_parent&quot;</span><br><span class="line">             tools:context=&quot;.SecondFraagment&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- TODO: Update blank fragment layout --&gt;</span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:layout_marginTop=&quot;100dp&quot;</span><br><span class="line">        android:layout_gravity=&quot;center_horizontal&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;我是第二个Fragment&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;Button</span><br><span class="line">        android:textAllCaps=&quot;false&quot;</span><br><span class="line">        android:id=&quot;@+id/btn_back&quot;</span><br><span class="line">        android:layout_gravity=&quot;center&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;返回&quot;</span><br><span class="line">    /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/FrameLayout&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>第三步：</strong> 创建导航视图文件</p>
+<p>在 res 目录下新建 navigation 文件夹，然后新建一个 navigation 资源文件（需要 Android Studio3.2以上版本）</p>
+<p><img src="https://ws1.sinaimg.cn/large/88ddd23bly1fvmxkbmhxnj20kn0at0td.jpg" alt></p>
+<p>打开资源文件，然后切换为可视化模式，将两个已经创建好的 Fragment 添加进去，用箭头连接它们，这样就为它们绑定了跳转事件。</p>
+<p><img src="https://ws1.sinaimg.cn/large/88ddd23bly1fvmxnflos0j20wf0hs74p.jpg" alt></p>
+<p>切换为 Text 模式后，可以看到具体的实现代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;navigation</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;</span><br><span class="line">    xmlns:tools=&quot;http://schemas.android.com/tools&quot; android:id=&quot;@+id/changefragment&quot;</span><br><span class="line">    app:startDestination=&quot;@id/firstFragment&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;fragment</span><br><span class="line">        android:id=&quot;@+id/firstFragment&quot;</span><br><span class="line">        android:name=&quot;keven.com.myteststudio3l2.FirstFragment&quot;</span><br><span class="line">        android:label=&quot;fragment_first&quot;</span><br><span class="line">        tools:layout=&quot;@layout/fragment_first&quot;&gt;</span><br><span class="line">        &lt;action</span><br><span class="line">            android:id=&quot;@+id/action_firstFragment_to_secondFraagment&quot;</span><br><span class="line">            app:destination=&quot;@id/secondFraagment&quot;/&gt;</span><br><span class="line">    &lt;/fragment&gt;</span><br><span class="line">    &lt;fragment</span><br><span class="line">        android:id=&quot;@+id/secondFraagment&quot;</span><br><span class="line">        android:name=&quot;keven.com.myteststudio3l2.SecondFraagment&quot;</span><br><span class="line">        android:label=&quot;fragment_second_fraagment&quot;</span><br><span class="line">        tools:layout=&quot;@layout/fragment_second_fraagment&quot;/&gt;</span><br><span class="line">&lt;/navigation&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>第四步：</strong> 编辑 MainActivity</p>
+<p>在 Acitvity 布局文件中添加 fragment 组件，设置 name 属性为 androidx.navigation.fragment.NavHostFragment。在传统的单 Activity 多 Fragment 场景中，我们往往需要为 Activity 添加一个 FrameLayout 作为 Fragment 的容器。在 Navigation 中 HavHostFragment 就是 Fragment 的容器。布局中的 navGraph 属性建立了与 navigation 资源文件的关系。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;android.support.constraint.ConstraintLayout</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;</span><br><span class="line">    xmlns:tools=&quot;http://schemas.android.com/tools&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    tools:context=&quot;.MainActivity&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;fragment</span><br><span class="line">        android:id=&quot;@+id/fragment&quot;</span><br><span class="line">        android:name=&quot;androidx.navigation.fragment.NavHostFragment&quot;</span><br><span class="line">        android:layout_width=&quot;0dp&quot;</span><br><span class="line">        android:layout_height=&quot;0dp&quot;</span><br><span class="line">        app:defaultNavHost=&quot;true&quot;</span><br><span class="line">        app:layout_constraintBottom_toBottomOf=&quot;parent&quot;</span><br><span class="line">        app:layout_constraintLeft_toLeftOf=&quot;parent&quot;</span><br><span class="line">        app:layout_constraintRight_toRightOf=&quot;parent&quot;</span><br><span class="line">        app:layout_constraintTop_toTopOf=&quot;parent&quot;</span><br><span class="line">        app:navGraph=&quot;@navigation/changefragment&quot;</span><br><span class="line">    /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/android.support.constraint.ConstraintLayout&gt;</span><br></pre></td></tr></table></figure>
+<p>重写 onSupportNavigateUp（）方法，目的是将 back 事件委托出去。若栈中有两个以上 Fragment，点击 back 键就会返回到上一个 Fragment。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public boolean onSupportNavigateUp() &#123;</span><br><span class="line">        Fragment fragment=getSupportFragmentManager().findFragmentById(R.id.fragment);</span><br><span class="line">        return NavHostFragment.findNavController(fragment).navigateUp();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>第五步：</strong> 在 Fragment 中设置相应的跳转事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class FirstFragment extends Fragment &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public FirstFragment() &#123;</span><br><span class="line">        // Required empty public constructor</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public View onCreateView(LayoutInflater inflater, ViewGroup container,</span><br><span class="line">                             Bundle savedInstanceState) &#123;</span><br><span class="line">        // Inflate the layout for this fragment</span><br><span class="line">        return inflater.inflate(R.layout.fragment_first, container, false);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onViewCreated(view, savedInstanceState);</span><br><span class="line">        Button btnNext=view.findViewById(R.id.btn_next);</span><br><span class="line">        btnNext.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View v) &#123;</span><br><span class="line">                Navigation.findNavController(v).navigate(R.id.action_firstFragment_to_secondFraagment);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class SecondFraagment extends Fragment &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public SecondFraagment() &#123;</span><br><span class="line">        // Required empty public constructor</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public View onCreateView(LayoutInflater inflater, ViewGroup container,</span><br><span class="line">                             Bundle savedInstanceState) &#123;</span><br><span class="line">        // Inflate the layout for this fragment</span><br><span class="line">        return inflater.inflate(R.layout.fragment_second_fraagment, container, false);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onViewCreated(view, savedInstanceState);</span><br><span class="line">        Button btnBack=view.findViewById(R.id.btn_back);</span><br><span class="line">        btnBack.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View v) &#123;</span><br><span class="line">                Navigation.findNavController(v).navigateUp();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果在界面切换的过程中需要传值，就把数据设置在 Bundle 中，使用如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Navigation.findNavController(view).navigate(actionid,bundle);</span><br></pre></td></tr></table></figure>
+<p>现在，我们就可以把程序运行起来了，如果需要转场动画，可以在 Navigation 资源文件的 action 标签下，添加动画属性。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://ws1.sinaimg.cn/large/88ddd23bly1g0e6uzdccxj20ri16sdm3.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://ws1.sinaimg.cn/large/88ddd23bly1g0e6tq6chaj20vn17e41r.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/21/Android-官方组件-Navigation-初使用/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/02/21/Java-String/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java String</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -230,9 +378,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
